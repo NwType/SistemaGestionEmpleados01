@@ -35,10 +35,17 @@ namespace SistemaGestionEmpleados.DAL
             empleado e = new empleado();
             if (tabla.Rows.Count > 0)
             {
-                e.idpersona = Convert.ToInt32(tabla.Rows[0]["idpersona"]);
+                e.idempleado = Convert.ToInt32(tabla.Rows[0]["idempleado"]);
                 e.puesto = tabla.Rows[0]["puesto"].ToString();
+                e.salario= Convert.ToDecimal(tabla.Rows[0]["salario"]);
+                e.fechaContratacion = Convert.ToDateTime(tabla.Rows[0]["fechacontratacion"]);
             }
             return e;
+        }
+        public void EliminarEmpleadoDal(int id)
+        {
+            string consulta = "delete from empleado where idempleado=" + id;
+            conexion.Ejecutar(consulta);
         }
 
     }

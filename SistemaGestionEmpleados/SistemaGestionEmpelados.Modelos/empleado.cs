@@ -8,6 +8,7 @@ namespace SistemaGestionEmpelados.Modelos
 {
     public class empleado
     {
+        public int idempleado { get; set; }
         public int idpersona {  get; set; }
         public string puesto { get; set; }
         public decimal salario { get; set; }

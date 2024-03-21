@@ -31,5 +31,10 @@ namespace SistemaGestionEmpleados.DAL
             }
             return p;
         }
+        public void EliminarPersonaDal(int id)
+        {
+            string consulta = "delete from persona where idempleado=" + id;
+            conexion.Ejecutar(consulta);
+        }
     }
 }

@@ -24,5 +24,9 @@ namespace SistemaGestionEmpleados.BSS
         {
             dal.EditarEmpleadoDaL(e);
         }
+        public void EliminarEmpleadoBss(int id)
+        {
+            dal.EliminarEmpleadoDal(id);
+        }
     }
 }

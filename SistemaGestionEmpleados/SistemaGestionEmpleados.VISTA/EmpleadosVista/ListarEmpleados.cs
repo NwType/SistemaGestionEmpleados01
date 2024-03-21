@@ -41,5 +41,16 @@ namespace SistemaGestionEmpleados.VISTA.EmpleadosVista
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int IdEmpleadoseleccionado = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            DialogResult result = MessageBox.Show("Esta seguro de eliminar esta persona", "Eliminando", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                bss.EliminarEmpleadoBss(IdEmpleadoseleccionado);
+                dataGridView1.DataSource = bss.ListarEmpleadoBss();
+            }
+        }
     }
 }
